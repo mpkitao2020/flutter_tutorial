@@ -27,10 +27,49 @@ class _RandomWordsState extends State<RandomWords> {
   final _saved = <WordPair>{};
   final _biggerFont = const TextStyle(fontSize: 18.0);
   @override
+  void _pushSaved() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) {
+          final tiles = _saved.map(
+            (pair) {
+              return ListTile(
+                title: Text(
+                  pair.asPascalCase,
+                  style: _biggerFont,
+                ),
+              );
+            },
+          );
+          final divided = tiles.isNotEmpty
+              ? ListTile.divideTiles(
+                  context: context,
+                  tiles: tiles,
+                ).toList()
+              : <Widget>[];
+
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text("Saved Suggestions"),
+            ),
+            body: ListView(children: divided),
+          );
+        },
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Startup Name Generator'),
+        actions: [
+          IconButton(
+            onPressed: _pushSaved,
+            icon: const Icon(Icons.list),
+            tooltip: "Saved Suggestions",
+          )
+        ],
       ),
       body: _buildSuggestions(),
     );
