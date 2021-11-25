@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "399901969790",
+    "project_id": "myapp-acf1d",
+    "storage_bucket": "myapp-acf1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399901969790:android:6f66f3c0a77d0a7c5f372f",
+        "android_client_info": {
+          "package_name": "com.example.flatter_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399901969790-v8bisc2uscha0anhceeger3gqmvbsvdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCdoFVn4oFuhFHHywYbpSliUrtCU0Qf_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399901969790-v8bisc2uscha0anhceeger3gqmvbsvdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
