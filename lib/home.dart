@@ -13,9 +13,12 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 変更箇所
-    return ChangeNotifierProvider(
-        create: (context) => CounterStore(),
-        child: Builder(builder: (BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CounterStore()),
+      ],
+      child: Builder(
+        builder: (BuildContext context) {
           // final store = Provider.of<CounterStore>(context);
           // final _counter = store.counter;
           return Scaffold(
@@ -43,6 +46,8 @@ class MyHomePage extends StatelessWidget {
             //   child: Icon(Icons.add),
             // ),
           );
-        }));
+        },
+      ),
+    );
   }
 }
